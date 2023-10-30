@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#                            
-███╗░░██╗████████╗░██╗░░░░░░░██╗██████╗░██╗░░██╗░░░░░░░██████╗░█████╗░███╗░░██╗
-████╗░██║╚══██╔══╝░██║░░██╗░░██║██╔══██╗██║░██╔╝░░░░░░██╔════╝██╔══██╗████╗░██║
-██╔██╗██║░░░██║░░░░╚██╗████╗██╔╝██████╔╝█████═╝░█████╗╚█████╗░██║░░╚═╝██╔██╗██║
-██║╚████║░░░██║░░░░░████╔═████║░██╔══██╗██╔═██╗░╚════╝░╚═══██╗██║░░██╗██║╚████║
-██║░╚███║░░░██║░░░░░╚██╔╝░╚██╔╝░██║░░██║██║░╚██╗░░░░░░██████╔╝╚█████╔╝██║░╚███║
-╚═╝░░╚══╝░░░╚═╝░░░░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝░░░░░░╚═════╝░░╚════╝░╚═╝░░╚══╝ by hits3134
+#                               
+#                           
+#███╗░░██╗████████╗░██╗░░░░░░░██╗██████╗░██╗░░██╗░░░░░░░██████╗░█████╗░███╗░░██╗
+#████╗░██║╚══██╔══╝░██║░░██╗░░██║██╔══██╗██║░██╔╝░░░░░░██╔════╝██╔══██╗████╗░██║
+#██╔██╗██║░░░██║░░░░╚██╗████╗██╔╝██████╔╝█████═╝░█████╗╚█████╗░██║░░╚═╝██╔██╗██║
+#██║╚████║░░░██║░░░░░████╔═████║░██╔══██╗██╔═██╗░╚════╝░╚═══██╗██║░░██╗██║╚████║
+#██║░╚███║░░░██║░░░░░╚██╔╝░╚██╔╝░██║░░██║██║░╚██╗░░░░░░██████╔╝╚█████╔╝██║░╚███║
+#╚═╝░░╚══╝░░░╚═╝░░░░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝░░░░░░╚═════╝░░╚════╝░╚═╝░░╚══╝
+#                                  /by hits3134
+#
 # Author     : Hitarth shah
 # Tool       : Ntwrk-scn v1.0
 # Usage      : python3 Ntwrk-scn.py example.com
@@ -160,6 +163,21 @@ def helper():
 def clear():
         sys.stdout.write("\033[F")
         sys.stdout.write("\033[K") #clears until EOL
+
+# Ntwrk-scn Logo
+def logo():
+    print(bcolors.WARNING)
+    logo_ascii = """
+                                  __         __
+                                 /__)_  """+bcolors.BADFAIL+" ●"+bcolors.WARNING+"""_/(  _ _
+                                / ( (//)/(/__)( (//)
+                                     /
+                     """+bcolors.ENDC+"""(The Multi-Tool Web Vulnerability Scanner)
+
+                     
+    """
+    print(logo_ascii)
+    print(bcolors.ENDC)
 
 
 # Initiliazing the idle loader/spinner class
@@ -1407,7 +1425,7 @@ elif args_namespace.update:
     cmd = 'sha1sum Ntwrk-scn.py | grep .... | cut -c 1-40'
     oldversion_hash = subprocess.check_output(cmd, shell=True)
     oldversion_hash = oldversion_hash.strip()
-    os.system('wget -N https://raw.githubusercontent.com/hits313/Ntwrk-scn/master/Ntwrk-scn.py -O Ntwrk-scn.py > /dev/null 2>&1')
+    os.system('wget -N https://raw.githubusercontent.com/skavngr/Ntwrk-scn/master/Ntwrk-scn.py -O Ntwrk-scn.py > /dev/null 2>&1')
     newversion_hash = subprocess.check_output(cmd, shell=True)
     newversion_hash = newversion_hash.strip()
     if oldversion_hash == newversion_hash :
